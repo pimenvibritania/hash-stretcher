@@ -11,6 +11,6 @@ class HashStretcherTest extends TestCase
         $hash = new Hasher();
         $hash = strlen($hash->create("pimen", "vibritania"));
 
-        $this->assertEquals(139, $hash);
+        $this->assertEquals(32, $hash);
     }
 }

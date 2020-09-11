@@ -8,19 +8,13 @@ namespace pimenvibritania\HashStretcher;
  */
 interface HashStretcherInterface
 {
-    /**
-     * @param $key
-     * @param $salt
-     * @return mixed
-     */
-    public function gost($key, $salt);
 
     /**
      * @param $key
      * @param $salt
      * @return mixed
      */
-    public function snefru($key, $salt);
+    public function sha3($key, $salt);
 
     /**
      * @param $key
@@ -28,6 +22,13 @@ interface HashStretcherInterface
      * @return mixed
      */
     public function whirlpool($key, $salt);
+
+    /**
+     * @param $key
+     * @param $salt
+     * @return mixed
+     */
+    public function gost($key, $salt);
 
     /**
      * @param $key
