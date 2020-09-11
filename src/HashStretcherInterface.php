@@ -32,6 +32,12 @@ interface HashStretcherInterface
 
     /**
      * @param $key
+     * @return mixed
+     */
+    public function joaat($key);
+
+    /**
+     * @param $key
      * @param $salt
      * @return mixed
      */

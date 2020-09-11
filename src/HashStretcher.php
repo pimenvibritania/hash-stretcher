@@ -18,7 +18,7 @@ class Hasher implements HasherContract
     /**
      * @param $key
      * @param $salt
-     * @return mixed|string
+     * @return mixed|string = 512-bits / 128 char
      */
     public function sha3($key, $salt)
     {
@@ -29,7 +29,7 @@ class Hasher implements HasherContract
     /**
      * @param $key
      * @param $salt
-     * @return mixed|string
+     * @return mixed|string = 512-bits / 128 char
      */
     public function whirlpool($key, $salt)
     {
@@ -40,7 +40,7 @@ class Hasher implements HasherContract
     /**
      * @param $key
      * @param $salt
-     * @return mixed|string
+     * @return mixed|string = 256-bits / 64 char
      */
     public function gost($key, $salt)
     {
@@ -51,12 +51,23 @@ class Hasher implements HasherContract
     /**
      * @param $key
      * @param $salt
-     * @return string
+     * @return string = 128-bits / 32 char
      */
     public function md5($key, $salt)
     {
         $hashed = self::CODE.$key.$salt;
         return hash("md5", $hashed);
+    }
+
+    /**
+     * @param $key
+     * @return string = 32-bits / 8 char
+     *
+     * This used for hashing Blowfish IV
+     */
+    public function joaat($key)
+    {
+        return hash("joaat", $key);
     }
 
     /**
