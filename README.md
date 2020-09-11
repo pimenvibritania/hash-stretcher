@@ -1,5 +1,4 @@
 # Hash Stretcher for AES-256 (32 long char key)
-# ==============================================
 
 #### Stretching the hash encryption key with hash integration for AES-256 key.
 
