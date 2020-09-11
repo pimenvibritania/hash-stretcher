@@ -15,7 +15,12 @@ class Hasher implements HasherContract
     const CODE = '::PIMEN::';
 
 
-    public function sha3($key,$salt)
+    /**
+     * @param $key
+     * @param $salt
+     * @return mixed|string
+     */
+    public function sha3($key, $salt)
     {
         $hashed = self::CODE.$key.$salt;
         return hash("sha3-512", $hashed);
@@ -32,12 +37,22 @@ class Hasher implements HasherContract
         return hash("whirlpool", $hashed);
     }
 
+    /**
+     * @param $key
+     * @param $salt
+     * @return mixed|string
+     */
     public function gost($key, $salt)
     {
         $hashed = self::CODE.$key.$salt;
         return hash("gost", $hashed);
     }
 
+    /**
+     * @param $key
+     * @param $salt
+     * @return string
+     */
     public function md5($key, $salt)
     {
         $hashed = self::CODE.$key.$salt;
